@@ -2,6 +2,9 @@ import utils
 
 
 def dfs_pre_order(node: utils.TreeNode | None):
+    """
+    Pre-order traversal is a type of depth-first search algorithm.
+    """
     if node is None:
         return
     print(node.val)
@@ -10,6 +13,9 @@ def dfs_pre_order(node: utils.TreeNode | None):
 
 
 def dfs_in_order(node: utils.TreeNode | None):
+    """
+    In-order traversal is a type of depth-first search algorithm.
+    """
     if node is None:
         return
     dfs_in_order(node.left)
@@ -18,6 +24,9 @@ def dfs_in_order(node: utils.TreeNode | None):
 
 
 def dfs_post_order(node: utils.TreeNode | None):
+    """
+    Post-order traversal is a type of depth-first search algorithm.
+    """
     if node is None:
         return
 
@@ -27,6 +36,9 @@ def dfs_post_order(node: utils.TreeNode | None):
 
 
 def bfs(node: utils.TreeNode | None):
+    """
+    Breadth-first search is a type of search algorithm that traverses a tree level
+    """
     if node is None:
         return
     queue: list[utils.TreeNode] = []
@@ -41,11 +53,14 @@ def bfs(node: utils.TreeNode | None):
 
 
 def test_bfs():
+    print("---BFS---")
     base_tree = utils.create_standard_tree()
     bfs(base_tree)
+    print("---------")
 
 
 def test_dfs_all_cases():
+    print("---DFS---")
     base_tree = utils.create_standard_tree()
     print("DFS Pre-order")
     dfs_pre_order(base_tree)
@@ -53,8 +68,11 @@ def test_dfs_all_cases():
     dfs_in_order(base_tree)
     print("DFS Post-order")
     dfs_post_order(base_tree)
+    print("---------")
 
 
 if __name__ == "__main__":
+    print("Running tests")
+    print(f"Initial Node: \n{utils.show_std_tree()}")
     test_bfs()
     test_dfs_all_cases()
